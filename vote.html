@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vote - Joueur du Match</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    header {
+      background: #000;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .vote-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 40px 20px;
+      gap: 30px;
+    }
+
+    .player-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      width: 220px;
+      transition: transform 0.3s;
+    }
+
+    .player-card:hover {
+      transform: scale(1.03);
+    }
+
+    .player-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .player-name {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    .vote-btn {
+      background: black;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .vote-btn:hover {
+      background: #333;
+    }
+
+    .message {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 18px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Vote - Joueur du Match</h1>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="equipe.html">الفريق</a>
+      <a href="matchs.html">المباريات</a>
+      <a href="vote.html">تصويت</a>
+    </nav>
+  </header>
+
+  <div class="vote-container">
+    <div class="player-card">
+      <img src="vote/fassilat.jpg" alt="FASSILAT">
+      <div class="player-name">FASSILAT</div>
+      <button class="vote-btn" onclick="vote('FASSILAT')">Voter</button>
+    </div>
+
+    <div class="player-card">
+      <img src="vote/dib.jpg" alt="HAMZA LAGNAOUI">
+      <div class="player-name">HAMZA LAGNAOUI</div>
+      <button class="vote-btn" onclick="vote('HAMZA LAGNAOUI')">Voter</button>
+    </div>
+
+    <div class="player-card">
+      <img src="vote/ayoub1.jpg" alt="AYOUB DIANE">
+      <div class="player-name">AYOUB DIANE</div>
+      <button class="vote-btn" onclick="vote('AYOUB DIANE')">Voter</button>
+    </div>
+
+    <div class="player-card">
+      <img src="vote/saht1.jpg" alt="MOHAMED EL SAHT">
+      <div class="player-name">MOHAMED EL SAHT</div>
+      <button class="vote-btn" onclick="vote('MOHAMED EL SAHT')">Voter</button>
+    </div>
+  </div>
+
+  <div class="message" id="message"></div>
+
+  <script>
+    function vote(player) {
+      const msg = document.getElementById('message');
+      msg.innerText = '✅ Merci d\'avoir voté pour ' + player + '!';
+    }
+  </script>
+
+</body>
+</html>
